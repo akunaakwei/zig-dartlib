@@ -1,0 +1,17 @@
+.{
+    .name = .dart_hello_world,
+    .version = "0.0.0",
+    .fingerprint = 0x5914afa4dea70185, // Changing this has security and trust implications.
+    .minimum_zig_version = "0.15.0-dev.1222+5fb36d260",
+    .dependencies = .{
+        .dartlib = .{
+            .path = "..",
+        },
+    },
+    .paths = .{
+        "src",
+        "build.zig",
+        "build.zig.zon",
+        "LICENSE",
+    },
+}

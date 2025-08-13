@@ -1,0 +1,19 @@
+.{
+    .name = .zig_dartlib,
+    .version = "3.8.1",
+    .fingerprint = 0x63ac4b95d5b64a06, // Changing this has security and trust implications.
+    .minimum_zig_version = "0.14.1",
+    .dependencies = .{
+        .dart = .{
+            .url = "https://github.com/akunaakwei/zig-dart/archive/9cfb7cc4107a409d3c6e0e02b258d7df60fe64e2.tar.gz",
+            .hash = "dart-3.8.1-QqhdG3RsAQCiqjkNCv414StcrXV5TYpkT_vuXNKSZsmL",
+        },
+    },
+    .paths = .{
+        "include",
+        "src",
+        "build.zig",
+        "build.zig.zon",
+        "LICENSE",
+    },
+}
