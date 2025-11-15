@@ -8,7 +8,19 @@ pub fn build(b: *std.Build) void {
         .target = target,
         .optimize = optimize,
     });
-    const dartlib_mod = dartlib_dep.module("dartlib");
+    const dartlib = dartlib_dep.artifact("dartlib");
+
+    const c_wf = b.addWriteFiles();
+    const c_h = c_wf.add("c.h",
+        \\#include <dartlib_api.h>
+    );
+    const c_translate = b.addTranslateC(.{
+        .root_source_file = c_h,
+        .target = target,
+        .optimize = optimize,
+    });
+    c_translate.addIncludePath(dartlib.getEmittedIncludeTree());
+    const c_mod = c_translate.createModule();
 
     const exe = b.addExecutable(.{
         .name = "dart-hello-world",
@@ -17,10 +29,11 @@ pub fn build(b: *std.Build) void {
             .target = target,
             .optimize = optimize,
             .imports = &.{
-                .{ .name = "dartlib", .module = dartlib_mod },
+                .{ .name = "c", .module = c_mod },
             },
         }),
     });
+    exe.linkLibrary(dartlib);
 
     b.installArtifact(exe);
 

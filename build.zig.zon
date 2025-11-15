@@ -2,11 +2,11 @@
     .name = .zig_dartlib,
     .version = "3.8.1",
     .fingerprint = 0x63ac4b95d5b64a06, // Changing this has security and trust implications.
-    .minimum_zig_version = "0.14.1",
+    .minimum_zig_version = "0.15.2",
     .dependencies = .{
         .dart = .{
-            .url = "https://github.com/akunaakwei/zig-dart/archive/9cfb7cc4107a409d3c6e0e02b258d7df60fe64e2.tar.gz",
-            .hash = "dart-3.8.1-QqhdG3RsAQCiqjkNCv414StcrXV5TYpkT_vuXNKSZsmL",
+            .url = "https://github.com/akunaakwei/zig-dart/archive/71581a80a1ea862604e83cd615ebee32f7a71c01.tar.gz",
+            .hash = "dart-3.8.1-QqhdG1xsAQBMzH-m_DPecjZ4DW1nH_M-Y8f1fnbBd5gz",
         },
     },
     .paths = .{
